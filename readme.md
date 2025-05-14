@@ -18,6 +18,7 @@ Este proyecto es una actividad práctica donde trabajarás con clases en PHP. El
 
 En la terminal de windows (powershell, gitbash,etc) escribe
 
+```
 git clone https://github.com/JulitoM3/lecturiosis.git
 cd lecturiosis
 
@@ -37,9 +38,10 @@ cd lecturiosis
 
 En la terminal de windows (powershell, gitbash,etc) escribe
 
+```
 git remote remove origin
 git remote add origin https://github.com/TU-USUARIO/lecturiosisgit
-
+```
 
 ---
 
@@ -47,12 +49,15 @@ git remote add origin https://github.com/TU-USUARIO/lecturiosisgit
 
 1. Implementa **getters y setters** en `User.php` para los atributos privados.
 2. Crea una interfaz `ModelInterface` con los siguientes métodos:
+
 - `save()`
 - `delete()`
 - `findById($id)`
+
 3. Crea una clase base `Model` que implemente `ModelInterface`. Simula su comportamiento con `echo` o estructuras básicas de PHP.
 4. Haz que la clase `User` **herede** de `Model` y agregue sus propios atributos (`id`, `name`, `email`, etc.).
 5. En el controlador `IndexController.php has lo siguiente`:
+
 - Instancia un objeto `User`.
 - Asignes valores con los setters.
 - Llamen los métodos `save()`, `findById()`, y `delete()`.
@@ -63,8 +68,10 @@ git remote add origin https://github.com/TU-USUARIO/lecturiosisgit
 
 En la terminal de windows (powershell, gitbash,etc) escribe
 
+```
 git add .
 git commit -m "Termine la actividad"
+
 ```
 
 ---
@@ -72,7 +79,10 @@ git commit -m "Termine la actividad"
 ### 6. Sube tu código a GitHub
 
 En la terminal de windows (powershell, gitbash,etc) escribe
+
+```
 git push -u origin main
+```
 
 > Si usas `master` como rama por defecto, reemplaza `main` por `master`.
 
