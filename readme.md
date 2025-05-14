@@ -40,7 +40,7 @@ En la terminal de windows (powershell, gitbash,etc) escribe
 
 ```
 git remote remove origin
-git remote add origin https://github.com/TU-USUARIO/lecturiosisgit
+git remote add origin https://github.com/TU-USUARIO/lecturiosis.git
 ```
 
 ---
@@ -98,25 +98,30 @@ git push -u origin main
 
 ## 📂 Estructura sugerida de la actividad
 
-...
-models/
-├── ModelInterface.php ← Interfaz con métodos comunes
-├── Model.php ← Clase base que implementa la interfaz
-└── User.php ← Clase que hereda de Model
-
----
+<pre>
+App/ 
+└── models/ 
+    ├── ModelInterface.php ← Interfaz con métodos comunes 
+    ├── Model.php ← Clase base que implementa la interfaz 
+    └── User.php ← Clase que hereda de Model
+    </pre>
 
 ## 🧠 Criterios de evaluación
 
-Getters y setters en `User.php` | 20 puntos|
-Interfaz `ModelInterface` definida correctamente | 15 puntos|
-Clase `Model` implementa los métodos de la interfaz | 20 puntos|
-Herencia correcta de `Model` en `User` | 15 puntos|
-Script funcional en `index.php` que prueba los métodos | 20 puintos|
-Repositorio organizado y entregado correctamente | 10 puntos |
+<pre>
+| Criterio                                                             | Puntos      |
+|----------------------------------------------------------------------|-------------|
+| Getters y setters en `User.php`                                      | 20 puntos   |
+| Interfaz `ModelInterface` definida correctamente                     | 15 puntos   |
+| Clase `Model` implementa los métodos de la interfaz                  | 20 puntos   |
+| Herencia correcta de `Model` en `User`                               | 15 puntos   |
+| Implementacion en `IndexController.php`.                             | 20 puntos   |
+| Repositorio organizado y entregado correctamente                     | 10 puntos   |
 
-**Total: 100 puntos**
-**Minimo para acreditar la tarea 70 puntos**
+**Total: 100 puntos**  
+**Mínimo para acreditar la tarea: 70 puntos**
+
+</pre>
 
 ---
 
