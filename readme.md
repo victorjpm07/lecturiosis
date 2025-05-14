@@ -1,6 +1,6 @@
 # 🧑‍💻 Proyecto: Lecturiosis
 
-Este proyecto es una actividad práctica donde trabajarás con clases en PHP. El objetivo es que clones este repositorio, trabajes localmente agregando **getters y setters** al modelo `User.php`, y luego subas tu trabajo a tu propio repositorio para entregar la tarea en Google Classroom.
+Este proyecto es una actividad práctica donde trabajarás con clases en PHP. El objetivo es que clones este repositorio, trabajes localmente realizando la actividad, y luego subas tu trabajo a tu propio repositorio para entregar la tarea en Google Classroom.
 
 ---
 
@@ -16,9 +16,11 @@ Este proyecto es una actividad práctica donde trabajarás con clases en PHP. El
 
 ### 1. Clona este repositorio
 
-```bash
+En la terminal de windows (powershell, gitbash,etc) escribe
+
 git clone https://github.com/JulitoM3/lecturiosis.git
 cd lecturiosis
+
 ```
 
 ---
@@ -33,10 +35,11 @@ cd lecturiosis
 
 ### 3. Conecta tu carpeta local con tu repositorio
 
-```bash
+En la terminal de windows (powershell, gitbash,etc) escribe
+
 git remote remove origin
 git remote add origin https://github.com/TU-USUARIO/lecturiosisgit
-```
+
 
 ---
 
@@ -44,32 +47,32 @@ git remote add origin https://github.com/TU-USUARIO/lecturiosisgit
 
 1. Implementa **getters y setters** en `User.php` para los atributos privados.
 2. Crea una interfaz `ModelInterface` con los siguientes métodos:
-   - `save()`
-   - `delete()`
-   - `findById($id)`
+- `save()`
+- `delete()`
+- `findById($id)`
 3. Crea una clase base `Model` que implemente `ModelInterface`. Simula su comportamiento con `echo` o estructuras básicas de PHP.
 4. Haz que la clase `User` **herede** de `Model` y agregue sus propios atributos (`id`, `name`, `email`, etc.).
-5. Crea un script `index.php` donde:
-   - Instancies un objeto `User`.
-   - Asignes valores con los setters.
-   - Llamen los métodos `save()`, `findById()`, y `delete()`.
+5. En el controlador `IndexController.php has lo siguiente`:
+- Instancia un objeto `User`.
+- Asignes valores con los setters.
+- Llamen los métodos `save()`, `findById()`, y `delete()`.
 
 ---
 
 ### 5. Haz tu primer commit
 
-```bash
+En la terminal de windows (powershell, gitbash,etc) escribe
+
 git add .
-git commit -m "Agregué getters y setters al modelo User"
+git commit -m "Termine la actividad"
 ```
 
 ---
 
 ### 6. Sube tu código a GitHub
 
-```bash
+En la terminal de windows (powershell, gitbash,etc) escribe
 git push -u origin main
-```
 
 > Si usas `master` como rama por defecto, reemplaza `main` por `master`.
 
@@ -95,16 +98,15 @@ models/
 
 ## 🧠 Criterios de evaluación
 
-| Criterio                                               | Puntos |
-| ------------------------------------------------------ | ------ |
-| Getters y setters en `User.php`                        | 20     |
-| Interfaz `ModelInterface` definida correctamente       | 15     |
-| Clase `Model` implementa los métodos de la interfaz    | 20     |
-| Herencia correcta de `Model` en `User`                 | 15     |
-| Script funcional en `index.php` que prueba los métodos | 20     |
-| Repositorio organizado y entregado correctamente       | 10     |
+Getters y setters en `User.php` | 20 puntos|
+Interfaz `ModelInterface` definida correctamente | 15 puntos|
+Clase `Model` implementa los métodos de la interfaz | 20 puntos|
+Herencia correcta de `Model` en `User` | 15 puntos|
+Script funcional en `index.php` que prueba los métodos | 20 puintos|
+Repositorio organizado y entregado correctamente | 10 puntos |
 
 **Total: 100 puntos**
+**Minimo para acreditar la tarea 70 puntos**
 
 ---
 
