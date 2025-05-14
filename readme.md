@@ -40,11 +40,19 @@ git remote add origin https://github.com/TU-USUARIO/lecturiosisgit
 
 ---
 
-### 4. Edita el archivo `User.php`
+### 4. Actividad
 
-- Abre el archivo `User.php` dentro de la carpeta `models`.
-- Agrega los métodos **getters y setters** para los atributos de la clase.
-- Guarda los cambios.
+1. Implementa **getters y setters** en `User.php` para los atributos privados.
+2. Crea una interfaz `ModelInterface` con los siguientes métodos:
+   - `save()`
+   - `delete()`
+   - `findById($id)`
+3. Crea una clase base `Model` que implemente `ModelInterface`. Simula su comportamiento con `echo` o estructuras básicas de PHP.
+4. Haz que la clase `User` **herede** de `Model` y agregue sus propios atributos (`id`, `name`, `email`, etc.).
+5. Crea un script `index.php` donde:
+   - Instancies un objeto `User`.
+   - Asignes valores con los setters.
+   - Llamen los métodos `save()`, `findById()`, y `delete()`.
 
 ---
 
@@ -75,24 +83,35 @@ git push -u origin main
 
 ---
 
-## 📂 Estructura del proyecto
+## 📂 Estructura sugerida de la actividad
 
-```
-lecturiosis/
-│
-├──App
-│   └──Models
-│        └──User.php  ← Aquí debes trabajar
-├
-└── ...
-```
+...
+models/
+├── ModelInterface.php ← Interfaz con métodos comunes
+├── Model.php ← Clase base que implementa la interfaz
+└── User.php ← Clase que hereda de Model
+
+---
+
+## 🧠 Criterios de evaluación
+
+| Criterio                                               | Puntos |
+| ------------------------------------------------------ | ------ |
+| Getters y setters en `User.php`                        | 20     |
+| Interfaz `ModelInterface` definida correctamente       | 15     |
+| Clase `Model` implementa los métodos de la interfaz    | 20     |
+| Herencia correcta de `Model` en `User`                 | 15     |
+| Script funcional en `index.php` que prueba los métodos | 20     |
+| Repositorio organizado y entregado correctamente       | 10     |
+
+**Total: 100 puntos**
 
 ---
 
 ## 💡 Tips
 
-- Si tienes dudas, puedes volver a clonar y comenzar de nuevo.
-- Haz commits frecuentemente para guardar tu progreso.
-- Recuerda seguir buenas prácticas de programación en PHP.
+- No es necesario usar una base de datos real, puedes simularla.
+- Usa `private` para atributos y `public` para métodos.
+- Sigue las buenas prácticas: nombres claros, código ordenado y uso correcto de `namespace`.
 
 ---
