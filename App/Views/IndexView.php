@@ -9,7 +9,7 @@
 
 <body>
     <?= "hola estoy en PHP" ?>
-    <? echo "Hola"; ?>
+    <?php echo "Hola"; ?>
 </body>
 
 </html>

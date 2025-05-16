@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Connection;
+/*use App\Models\Connection;
 class User
 {
     protected $db;
@@ -22,4 +22,43 @@ class User
 
         return $users;
     }
+}*/
+
+require_once 'Model.php';
+
+Class User extends Model
+{
+    private $id;
+    private $nombre;
+    private $email;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function setnombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+    public function setemail($email)
+    {
+        $this->email = $email;
+    }
+
 }

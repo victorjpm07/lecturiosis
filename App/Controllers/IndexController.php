@@ -1,7 +1,11 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Models\User;
-class IndexController
+
+
+/*class IndexController
 {
 
     public function __construct()
@@ -13,5 +17,25 @@ class IndexController
 
         //LLAMADA A UNA VISTA
         require('./App/Views/IndexView.php');
+    }
+}
+*/
+
+class IndexController
+{
+    public function ejecutar()
+    {
+        $usuario = new User();
+        $usuario->setId(1);
+        $usuario->setnombre("Victor");
+        $usuario->setemail("victorcodi70@gmail.com");
+
+        echo " Nombre: " . $usuario->getnombre() . "\n";
+        echo " Email: " . $usuario->getemail() . "\n";
+
+        $usuario->save();
+        $usuario->findById($usuario->getId());
+        $usuario->delete();
+
     }
 }

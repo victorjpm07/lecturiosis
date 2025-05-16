@@ -7,7 +7,7 @@ class Connection
 
     public static $instance = null;
 
-    private function __construc()
+    private function __construct()
     {
     }
 
