@@ -3,6 +3,9 @@
 require_once __DIR__ . '/App/Core/Autoload.php';
 use App\Controllers\IndexController;
 
+$controller = new IndexController();
+$controller->ejecutar();
+
 class Index
 {
 

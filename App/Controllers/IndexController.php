@@ -30,8 +30,8 @@ class IndexController
         $usuario->setnombre("Victor");
         $usuario->setemail("victorcodi70@gmail.com");
 
-        echo " Nombre: " . $usuario->getnombre() . "\n";
-        echo " Email: " . $usuario->getemail() . "\n";
+        echo " Nombre: " . $usuario->getnombre() . "<br>";
+        echo " Email: " . $usuario->getemail() . "<br>";
 
         $usuario->save();
         $usuario->findById($usuario->getId());
