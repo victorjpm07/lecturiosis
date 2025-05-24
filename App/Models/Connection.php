@@ -4,21 +4,17 @@ namespace App\Models;
 
 class Connection
 {
-
     public static $instance = null;
 
-    private function __construct()
-    {
-    }
+    private function __construct() {} // corregido el nombre
 
     public static function getInstance()
     {
         if (empty(self::$instance)) {
-
             $db_server = '127.0.0.1';
             $db_user = 'root';
             $db_name = 'lecturiosis';
-            $db_password = 'ileana1102';
+            $db_password = 'huevos1';
 
             try {
                 self::$instance = new \PDO(
@@ -30,12 +26,12 @@ class Connection
                     \PDO::ATTR_ERRMODE,
                     \PDO::ERRMODE_EXCEPTION
                 );
-            } catch (\Throwable $th) {
-                echo "Error de conexión: " . $th->getMessage();
+            } catch (\PDOException $e) {
+                echo "Error de conexión: " . $e->getMessage();
                 exit;
             }
         }
+
         return self::$instance;
     }
-
 }

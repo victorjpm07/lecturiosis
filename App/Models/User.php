@@ -2,35 +2,18 @@
 
 namespace App\Models;
 
-/*use App\Models\Connection;
-class User
-{
-    protected $db;
-    public function __construct()
-    {
-        $this->db = Connection::getInstance();
-    }
-
-    public function getAll()
-    {
-        $sql = "SELECT users.name, users.email
-        FROM users;";
-        $result = $this->db->prepare($sql);
-        $result->execute();
-        $users = [];
-        $users = $result->fetchAll(\PDO::FETCH_ASSOC);
-
-        return $users;
-    }
-}*/
-
 require_once 'Model.php';
 
-Class User extends Model
-{
+use App\Models\Model;
+
+Class User extends Model{
+
+    protected static $table = 'users';
+    
     private $id;
     private $nombre;
     private $email;
+    private string $password = '';
 
     public function getId()
     {
@@ -45,20 +28,28 @@ Class User extends Model
     {
         return $this->email;
     }
+    public function getPassword()
+    {
+        return $this->password;
+    }
 
     public function setId($id)
     {
         $this->id = $id;
     }
 
-    public function setnombre($nombre)
+    public function setNombre($nombre)
     {
         $this->nombre = $nombre;
     }
 
-    public function setemail($email)
+    public function setEmail($email)
     {
         $this->email = $email;
+    }
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 
 }

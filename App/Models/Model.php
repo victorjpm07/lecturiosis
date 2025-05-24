@@ -2,9 +2,26 @@
 
 namespace App\Models;
 
-require_once 'ModelInterface.php';
+use App\Contracts\ModelInterface;
+use App\Models\Connection;
+
+
 
 class Model implements ModelInterface{
+
+    protected static $table = '';
+
+    private static $dbInstance;
+
+    public function __construct()
+    {
+        self::$dbInstance = Connection::getInstance();
+    }
+
+    protected static function getTable()
+    {
+        return static::$table;
+    }
 
     public function save()
     {
@@ -18,44 +35,25 @@ class Model implements ModelInterface{
 
     public function findById($id)
     {
-        echo "Buscando el modelo con id: $id<br>";
-    }
-}
-
-class Connection
-{
-
-    public static $instance = null;
-
-    private function __construct()
-    {
+    $table = static::getTable();
+    $sql = "SELECT * FROM $table WHERE id = :id";
+    $result = self::$dbInstance->prepare($sql);
+    $result->execute(['id' => $id]);
+    return $result->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public static function getInstance()
+
+
+    public static function get()
     {
-        if (empty(self::$instance)) {
-
-            $db_server = '127.0.0.1';
-            $db_user = 'root';
-            $db_name = 'lecturiosis';
-            $db_password = 'ileana1102';
-
-            try {
-                self::$instance = new \PDO(
-                    "mysql:host=$db_server;dbname=$db_name",
-                    $db_user,
-                    $db_password
-                );
-                self::$instance->setAttribute(
-                    \PDO::ATTR_ERRMODE,
-                    \PDO::ERRMODE_EXCEPTION
-                );
-            } catch (\Throwable $th) {
-                echo "Error de conexión: " . $th->getMessage();
-                exit;
-            }
+        $table = static::getTable();
+        $sql = "SELECT * FROM $table";
+        if (!isset(self::$dbInstance)){
+            self::$dbInstance = Connection::getInstance();
         }
-        return self::$instance;
-    }
+        $result = self::$dbInstance->prepare($sql);
+        $result->execute();
 
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }
